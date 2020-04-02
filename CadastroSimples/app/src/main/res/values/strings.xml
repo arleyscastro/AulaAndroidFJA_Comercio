@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Cadastro Simples</string>
+    <string name="salvar">Salvar</string>
+    <string name="voltar">Voltar</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="consultar">Consultar</string>
+    <string name="alterar">Alterar</string>
+    <string name="deletar">Deletar</string>
+</resources>
