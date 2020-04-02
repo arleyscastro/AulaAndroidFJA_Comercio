@@ -9,10 +9,105 @@
     tools:context=".CadastrarActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TELA DE CADASTRO VAZIA"
-        android:id="@+id/IssoVaiSerApagado"
-        ></TextView>
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/nome"
+        android:id="@+id/cadLblNome"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/cadTxtNome"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/endereco"
+        android:id="@+id/cadLblenderco"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/cadTxtEndereco"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/sexo"
+        android:id="@+id/cadLblSexo"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/cadRgsexo">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/masculino"
+            android:id="@+id/cadRbMasculino"
+            android:checked="false"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/feminino"
+            android:id="@+id/cadRbFeminino"
+            android:checked="false"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/dtnascimento"
+        android:id="@+id/cadLblDtNascimento"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/cadTxtDtNascimento"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/estadocivil"
+        android:id="@+id/cadLblEstadoCivil"/>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cadSpiEstadoCivil"/>
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ativo"
+        android:id="@+id/cadChkAtivo"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cadBtnVoltar"
+            android:text="@string/voltar"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/cadBtnVoltar"
+            android:id="@+id/cadBtnSalvar"
+            android:text="@string/salvar"/>
+
+    </RelativeLayout>
+
+
 
 </LinearLayout>

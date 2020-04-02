@@ -6,4 +6,12 @@
     <string name="consultar">Consultar</string>
     <string name="alterar">Alterar</string>
     <string name="deletar">Deletar</string>
+    <string name="nome">Nome</string>
+    <string name="endereco">Endereço</string>
+    <string name="sexo">Sexo</string>
+    <string name="masculino">Masculino</string>
+    <string name="feminino">Feminino</string>
+    <string name="dtnascimento">Data de nascimento</string>
+    <string name="estadocivil">Estado civil</string>
+    <string name="ativo">Ativo</string>
 </resources>
