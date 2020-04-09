@@ -14,4 +14,13 @@
     <string name="dtnascimento">Data de nascimento</string>
     <string name="estadocivil">Estado civil</string>
     <string name="ativo">Ativo</string>
+    <string name="casado">Casado (a)</string>
+    <string name="solteiro">Solteiro (a)</string>
+    <string name="divorciado">Divorciado (a)</string>
+    <string name="viuvo">Viúvo (a)</string>
+    <string name="obrigatorio_nome">O campo nome é obrigatório.</string>
+    <string name="obrigatorio_endereco">O campo endereço é obrigatório.</string>
+    <string name="obrigatorio_dtnasc">O campo data de nascimento é obrigatório.</string>
+    <string name="obrigatorio_sexo">O campo sexo é obrigatório.</string>
+    <string name="registosalvo">Registro salvo com sucesso!!!</string>
 </resources>
