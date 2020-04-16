@@ -82,6 +82,7 @@ public class PessoaRepository {
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
             pessoas.add( montaDto(cursor) );
+            cursor.moveToNext();
         }
         cursor.close();
 

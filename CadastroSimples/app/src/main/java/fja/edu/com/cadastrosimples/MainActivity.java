@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
                     ok=false;
                 }
                 if(opcao.equalsIgnoreCase(getString(R.string.consultar))){
-                    msg = "Clicou em Consultar";
-                    ok=false;
+                    novatela = new Intent(MainActivity.this, ConsultarActivity.class);
+                    ok=true;
                 }
                 if(opcao.equalsIgnoreCase(getString(R.string.cadastrar))){
                     novatela = new Intent(MainActivity.this, CadastrarActivity.class);
