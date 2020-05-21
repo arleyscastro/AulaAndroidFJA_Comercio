@@ -4,6 +4,7 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -11,6 +12,8 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.utils.viewport.StretchViewport;
+import com.badlogic.gdx.utils.viewport.Viewport;
 
 import java.util.Random;
 
@@ -56,8 +59,8 @@ public class GameBird extends ApplicationAdapter {
 		passaros[1] = new Texture("passaro2.png");
 		passaros[2] = new Texture("passaro3.png");
 		fundo = new Texture("fundo.png");
-		canoDeBaixo = new Texture("cano_baixo.png");
-		canoDoTopo = new Texture("cano_topo.png");
+		canoDeBaixo = new Texture("cano_baixo_maior.png");
+		canoDoTopo = new Texture("cano_topo_maior.png");
 		gameOver = new Texture("game_over.png");
 
 		fonte = new BitmapFont();
@@ -87,8 +90,12 @@ public class GameBird extends ApplicationAdapter {
 		//Gdx.app.log("Variação:", "Varia em " + Gdx.graphics.getDeltaTime());
 		//Gdx.app.log("Altura:", "Altura " + alturaDispositivo);
 
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT  );
+
+
 		detlaTime = Gdx.graphics.getDeltaTime();
 		variacao += detlaTime * 5;
+
         if(variacao>2) variacao = 0;
 
 		if (estadoDoJogo == 0 ){ // Jogo não iniciado
@@ -104,24 +111,44 @@ public class GameBird extends ApplicationAdapter {
             if(posicaoInicialVertical>0 || velocidadeQueda < 0)
                 posicaoInicialVertical = posicaoInicialVertical - velocidadeQueda;
 
-			posicaoDoMovimentoDoCanoHorizontal -= detlaTime * 200;
-
-			if(posicaoDoMovimentoDoCanoHorizontal < -canoDoTopo.getWidth()){
-				posicaoDoMovimentoDoCanoHorizontal = larguraDispositivo /2;
-				alturaEntreOsCanos = numeroRandomico.nextInt(400) - 200;
-				marcouPonto=false;
-			}
-
-			if(posicaoDoMovimentoDoCanoHorizontal < 150){
-				if(!marcouPonto){
-					pontuacao++;
-					marcouPonto=true;
+            if(estadoDoJogo == 1){//Jogo Iniciado
+            	if(pontuacao <= 5)
+					posicaoDoMovimentoDoCanoHorizontal -= detlaTime * 200;
+            	if(pontuacao >= 6 && pontuacao <=10)
+					posicaoDoMovimentoDoCanoHorizontal -= detlaTime * 400;
+				if(pontuacao >= 11 && pontuacao <=15){
+					espacoEntreOsCanos = 200;
+					posicaoDoMovimentoDoCanoHorizontal -= detlaTime * 800;
 				}
 
+				if(pontuacao >= 16)
+					posicaoDoMovimentoDoCanoHorizontal -= detlaTime * 1600;
+
+				if(posicaoDoMovimentoDoCanoHorizontal < -canoDoTopo.getWidth()){
+					posicaoDoMovimentoDoCanoHorizontal = larguraDispositivo /2;
+					alturaEntreOsCanos = numeroRandomico.nextInt(400) - 200;
+					marcouPonto=false;
+				}
+
+				if(posicaoDoMovimentoDoCanoHorizontal < 150){
+					if(!marcouPonto){
+						pontuacao++;
+						marcouPonto=true;
+					}
+
+				}
+			}else{
+				if(Gdx.input.justTouched()){
+					estadoDoJogo = 0;
+					velocidadeQueda = 0;
+					pontuacao = 0;
+					posicaoDoMovimentoDoCanoHorizontal = larguraDispositivo;
+					posicaoInicialVertical = alturaDispositivo/2;
+				}
 			}
 
-        }
 
+        }
 
 
 		batch.begin();
@@ -130,12 +157,11 @@ public class GameBird extends ApplicationAdapter {
 		batch.draw(canoDoTopo, posicaoDoMovimentoDoCanoHorizontal, (alturaDispositivo/2) + (espacoEntreOsCanos/2) + alturaEntreOsCanos);
 		batch.draw(canoDeBaixo,posicaoDoMovimentoDoCanoHorizontal,(alturaDispositivo/2) - canoDeBaixo.getHeight() - (espacoEntreOsCanos/2) + alturaEntreOsCanos);
 		batch.draw(passaros[(int)variacao], 150, posicaoInicialVertical);
-		fonte.draw(batch,String.valueOf(pontuacao), (larguraDispositivo/2)/2, (alturaDispositivo/2)+855);
+		fonte.draw(batch,String.valueOf(pontuacao), (larguraDispositivo/2)/2, (alturaDispositivo/2)+700);
 
 		if(estadoDoJogo == 2){
 			batch.draw(gameOver,(larguraDispositivo/2)/2 - gameOver.getWidth()/2,150);
 			mensagem.draw(batch,"Toque na tela para reiniciar",(larguraDispositivo/2)/2 - (gameOver.getWidth()/2) -200, 150);
-			estadoDoJogo = 1;
 		}
 
 		batch.end();
@@ -168,7 +194,7 @@ public class GameBird extends ApplicationAdapter {
 				|| Intersector.overlaps(passaroCirculo, retanguloCanoTopo)
 		        || posicaoInicialVertical <=0 || posicaoInicialVertical>=alturaDispositivo){
 			estadoDoJogo = 2;
-			pontuacao=0;
+			//pontuacao=0;
 		}
 	}
 	
