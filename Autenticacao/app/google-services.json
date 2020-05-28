@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "571184026917",
+    "firebase_url": "https://autenticador-91b76.firebaseio.com",
+    "project_id": "autenticador-91b76",
+    "storage_bucket": "autenticador-91b76.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:571184026917:android:702d910ea4bad7463236cc",
+        "android_client_info": {
+          "package_name": "fja.edu.com.autenticador"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "571184026917-oc4s61c831e9jq9218fvn24006hg5aju.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fja.edu.com.autenticador",
+            "certificate_hash": "e096b6be5b7df2784d0631cef6d613f1060279ef"
+          }
+        },
+        {
+          "client_id": "571184026917-82043991rns9hi7sr23gcd4jqm5kk959.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWoKhZHvS9xdiInPG8Jj-voXQqqEnQizs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "571184026917-82043991rns9hi7sr23gcd4jqm5kk959.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
