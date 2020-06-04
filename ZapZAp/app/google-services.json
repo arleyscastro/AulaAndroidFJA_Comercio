@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "899275407034",
+    "firebase_url": "https://zapzap-82d0d.firebaseio.com",
+    "project_id": "zapzap-82d0d",
+    "storage_bucket": "zapzap-82d0d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899275407034:android:bad6deee766b877129cc83",
+        "android_client_info": {
+          "package_name": "fja.edu.com.zapclone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "899275407034-4q9303h2pg3j10c9d2m6kcmt1ull9q6q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fja.edu.com.zapclone",
+            "certificate_hash": "e096b6be5b7df2784d0631cef6d613f1060279ef"
+          }
+        },
+        {
+          "client_id": "899275407034-3scei5ebh9r4dvjticchhjkqmgmrhvp5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSBberuRbKlfJTQb3Fw8uIM2k7-h-AH0Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "899275407034-3scei5ebh9r4dvjticchhjkqmgmrhvp5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
